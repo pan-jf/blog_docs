@@ -45,6 +45,9 @@ than in languages such as C++ or Java.
 
 ```
 
+
+在Go语言中，可以通过结构体组合来实现继承，示例如下：
+
 ```go
 
 // 这里Student继承了People，具有People的属性
