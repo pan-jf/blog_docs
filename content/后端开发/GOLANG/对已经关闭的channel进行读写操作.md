@@ -9,7 +9,7 @@
 
 #### 读已关闭的channel
 
-读已经关闭的channel无影响。
+> 无报错，根据是否有值输出值或者零值
 
 * 如果在关闭前，通道内部有元素，会正确读到元素的值；
 * 如果关闭前通道无元素，则会读取到通道内元素类型对应的零值。
@@ -28,6 +28,9 @@ func main() {
 
 #### 读未关闭的空channel
 
+> 如果channel已经无元素，读取会panic：all goroutines are asleep - deadlock!
+
+
 ```go
 func main() {
     channel := make(chan int, 10)
@@ -43,6 +46,8 @@ func main() {
 
 
 #### 写已关闭的channel
+
+> 会引发panic: send on closed channel
 
 
 ```go
